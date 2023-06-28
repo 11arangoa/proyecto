@@ -10,6 +10,8 @@ class Server{
         this.port = process.env.PORT//capturando variable
         
         this.empleadoPath = '/api/empleado'//ruta publica
+        this.categoriaPath = '/api/categoria'//ruta publica
+        this.productoPath = '/api/producto'//ruta publica
        
         this.middlewares()
         this.routes()
@@ -30,7 +32,8 @@ class Server{
 
     routes(){
         
-        
+        this.app.use(this.categoriaPath, require ('../routes/categorias')),
+        this.app.use(this.productoPath, require ('../routes/productos')),
         this.app.use(this.empleadoPath, require ('../routes/empleados'))
         
        

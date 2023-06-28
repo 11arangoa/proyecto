@@ -5,7 +5,8 @@ const EmpleadoSchema = Schema(
         nombre: {
             type: String,
             required: [true, 'El campo nombre es requerido'],
-            unique: [true]
+            
+            
         },
 
         documento: {
